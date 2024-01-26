@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "bearing": -27.36,
+    "latitude": 51.518,
+    "longitude": -0.11,
+    "maxZoom": 15,
+    "minZoom": 5,
+    "pitch": 40.5,
+    "zoom": 10
+  },
+  "layers": [
+    {
+      "@@type": "ScatterplotLayer",
+      "data": [
+        {
+          "geometry": {
+            "coordinates": [
+              0.007430264762448861,
+              51.50537499215672
+            ],
+            "type": "Point"
+          },
+          "id": 5351,
+          "inverted_med_tt": 0.0,
+          "listed_geom": [
+            0.007430264762448861,
+            51.50537499215672
+          ],
+          "median_tt": 31.0,
+          "n_stations_norm": 0.00802139037433155,
+          "n_stats": 3
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.030039971603702795,
+              51.45754694466267
+            ],
+            "type": "Point"
+          },
+          "id": 3913,
+          "inverted_med_tt": 0.0,
+          "listed_geom": [
+            -0.030039971603702795,
+            51.45754694466267
+          ],
+          "median_tt": 31.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              0.02884420501861101,
+              51.47349825294356
+            ],
+            "type": "Point"
+          },
+          "id": 4401,
+          "inverted_med_tt": 0.0,
+          "listed_geom": [
+            0.02884420501861101,
+            51.47349825294356
+          ],
+          "median_tt": 31.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.09936363639755796,
+              51.57449418697807
+            ],
+            "type": "Point"
+          },
+          "id": 7398,
+          "inverted_med_tt": 0.0,
+          "listed_geom": [
+            -0.09936363639755796,
+            51.57449418697807
+          ],
+          "median_tt": 31.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              0.03948269499951096,
+              51.54256224702984
+            ],
+            "type": "Point"
+          },
+          "id": 6470,
+          "inverted_med_tt": 0.05,
+          "listed_geom": [
+            0.03948269499951096,
+            51.54256224702984
+          ],
+          "median_tt": 30.5,
+          "n_stations_norm": 0.0053475935828877,
+          "n_stats": 2
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.254976228237886,
+              51.447667774750826
+            ],
+            "type": "Point"
+          },
+          "id": 3553,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.254976228237886,
+            51.447667774750826
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.0160427807486631,
+          "n_stats": 6
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.05144984024351901,
+              51.46288567137809
+            ],
+            "type": "Point"
+          },
+          "id": 4068,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.05144984024351901,
+            51.46288567137809
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.0160427807486631,
+          "n_stats": 6
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.20152508031124636,
+              51.42609406354242
+            ],
+            "type": "Point"
+          },
+          "id": 2927,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.20152508031124636,
+            51.42609406354242
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00802139037433155,
+          "n_stats": 3
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              0.0020823033115562476,
+              51.505374388578005
+            ],
+            "type": "Point"
+          },
+          "id": 5350,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            0.0020823033115562476,
+            51.505374388578005
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00802139037433155,
+          "n_stats": 3
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              0.03947260245132025,
+              51.5531759641804
+            ],
+            "type": "Point"
+          },
+          "id": 6788,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            0.03947260245132025,
+            51.5531759641804
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00802139037433155,
+          "n_stats": 3
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.21226846697718244,
+              51.42082373389071
+            ],
+            "type": "Point"
+          },
+          "id": 2766,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.21226846697718244,
+            51.42082373389071
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.0053475935828877,
+          "n_stats": 2
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.2656869836752472,
+              51.4477337969949
+            ],
+            "type": "Point"
+          },
+          "id": 3551,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.2656869836752472,
+            51.4477337969949
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.0053475935828877,
+          "n_stats": 2
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.19551651021254984,
+              51.56422298770088
+            ],
+            "type": "Point"
+          },
+          "id": 7062,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.19551651021254984,
+            51.56422298770088
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.0053475935828877,
+          "n_stats": 2
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.1314148151532565,
+              51.56927832451786
+            ],
+            "type": "Point"
+          },
+          "id": 7233,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.1314148151532565,
+            51.56927832451786
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.0053475935828877,
+          "n_stats": 2
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.12115246448499314,
+              51.425787277803785
+            ],
+            "type": "Point"
+          },
+          "id": 2942,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.12115246448499314,
+            51.425787277803785
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.11043607635050104,
+              51.42575792020403
+            ],
+            "type": "Point"
+          },
+          "id": 2944,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.11043607635050104,
+            51.42575792020403
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.24435900888743847,
+              51.43164226621957
+            ],
+            "type": "Point"
+          },
+          "id": 3078,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.24435900888743847,
+            51.43164226621957
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.2390015659534038,
+              51.43161162679341
+            ],
+            "type": "Point"
+          },
+          "id": 3079,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.2390015659534038,
+            51.43161162679341
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.06218049819210125,
+              51.44694387750373
+            ],
+            "type": "Point"
+          },
+          "id": 3589,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.06218049819210125,
+            51.44694387750373
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        },
+        {
+          "geometry": {
+            "coordinates": [
+              -0.27100775626993334,
+              51.4530871935503
+            ],
+            "type": "Point"
+          },
+          "id": 3709,
+          "inverted_med_tt": 0.1,
+          "listed_geom": [
+            -0.27100775626993334,
+            51.4530871935503
+          ],
+          "median_tt": 30.0,
+          "n_stations_norm": 0.00267379679144385,
+          "n_stats": 1
+        }
+      ],
+      "filled": true,
+      "getFillColor": "@@=[255,(inverted_med_tt * 255), (median_tt * 255)]",
+      "getLineColor": "@@=[0,0,0,0]",
+      "getPosition": "@@=listed_geom",
+      "getRadius": 50,
+      "id": "e5551794-83cb-4c04-9248-5e327f1692e6",
+      "lineWidthMinPixels": 1,
+      "opacity": 0.2,
+      "pickable": true,
+      "radiusMaxPixels": 100,
+      "radiusMinPixels": 1,
+      "radiusScale": 6,
+      "stroked": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = {'text': 'Stations serving: {n_stats}\nMdn travel time: {median_tt}'};
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>
