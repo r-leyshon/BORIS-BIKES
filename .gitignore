@@ -1,3 +1,6 @@
+# quarto lint
+index_files
+data
 # conda env
 /boris-bikes-env/
 # vscode config
