@@ -10,7 +10,7 @@ toc: true
 
 This notebook presents an approach to optimising the location of new public
 bike stations in London. This method calculates travel times from actual
-station locations provided by [Tfl BikePoint API](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/BikePoint/BikePoint_GetAll). Routing is done with
+station locations provided by [TfL BikePoint API](https://api.tfl.gov.uk/swagger/ui/index.html?url=/swagger/docs/v1#!/BikePoint/BikePoint_GetAll). Routing is done with
 [r5py](https://r5py.readthedocs.io/en/stable/), a python wrapper that exposes
 the performant multi-modal transport modelling capabilities of the open Java
 library r5.
