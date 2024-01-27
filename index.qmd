@@ -61,19 +61,19 @@ Mouse controls:
 
 ## Points Served By Stations
 
-In this section, the points of the point grid are coloured by the median travel
-time taken by bike from every charging station within a 30 minute ride. The
-routing method takes account of the public road network, including
+In this section, the points of the point plane are coloured by the median
+travel time taken by bike from every charging station within a 30 minute ride.
+The routing method takes account of the public road network, including
 pedestrianised zones, one-way streets and incline. It should be stated that the
 cycle network is provided by an open source supplier [BBBike](https://download.bbbike.org/osm/).
 This data asset is community-maintained and as such, the accuracy of the
 network should be more thoroughly assessed prior to making policy decisions
 based on this analysis.
 
-Points in the grid that were not reachable within 30 minutes appear red. Points
-with a lower median travel time are coloured white. The pink zone within the
-red points represents the effective extent that can be reached by the average
-cyclist within a 30 minute cycle from any of the station locations.
+Points in the plane that were not reachable within 30 minutes appear red.
+Points with a lower median travel time are coloured white. The pink zone within
+the red points represents the effective extent that can be reached by the
+average cyclist within a 30 minute cycle from any of the station locations.
 
 Zooming into the interactive map, you may notice that some points are larger
 than others. Larger points are reachable by more stations within a 30 minute
@@ -82,12 +82,12 @@ public bike network.
 
 <iframe src="./outputs/point_layer.html" width=800 height=450></iframe>
 
-Note that the point grid is naive to the locations of places that people may
+Note that the point plane is naive to the locations of places that people may
 wish to start or finish their journeys. The current approach could be easily
 adapted to use locations of overnight population, commercial areas or any other
 geolocatable feature of interest.
 
-Note that some of the locations within the point grid were adjusted by a
+Note that some of the locations within the point plane were adjusted by a
 built-in r5py algorithm during the travel time computation. This was also not
 successful in some cases. The reason for this is that some points happen to
 fall in inaccessible parts of the transport network, such as within private
@@ -103,7 +103,7 @@ to meet this condition should be removed from the analysis.
 The above map can be simplified to provide the most remote locations within the
 reachable area by 30 minute bike ride. Considering adding stations to these
 locations would increase the coverage of the public bike network. However, once
-more note that due to the naive locations of the point grid, these locations
+more note that due to the naive locations of the point plane, these locations
 are not optimised for utility. Adjusting the station location to the nearest
 point of interest adjacent to the remote points would be recommended.
 
@@ -111,7 +111,8 @@ point of interest adjacent to the remote points would be recommended.
 
 A useful tool for the non-technical user would be perhaps a Shiny or Streamlit
 application that allowed the user to select n points with the greatest median
-travel time.
+travel time. If recalculation of the transport network was implemented, the
+Java dependencies would mean serving the dashboard from a Docker container.
 
 The ability to model counterfactuals such as adding new station locations into
 the network and recalculating the effect on travel times would also be of
