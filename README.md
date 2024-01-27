@@ -1,6 +1,6 @@
 # Optimising London's Public Cycle Network with R5Py
 
-Read on [GitHub Pages](https://r5py.readthedocs.io/en/stable/user-guide/installation/installation.html#java-development-kit)
+Read on [GitHub Pages](https://r-leyshon.github.io/BORIS-BIKES/)
 
 ## Getting Started
 
