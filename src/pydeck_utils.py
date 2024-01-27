@@ -33,7 +33,7 @@ def make_scatter_deck(
         "inverted_med_tt",
         "median_tt",
     ]
-    coldiff = set(gdf.columns).diff(expected_cols)
+    coldiff = sorted(list(set(expected_cols).difference(gdf.columns)))
     if coldiff:
         raise AttributeError(f"Required column names are absent: {coldiff}")
     # TODO: Expose more params in func signature
