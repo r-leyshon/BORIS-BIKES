@@ -44,7 +44,7 @@ in this analysis.
 The station locations are densely located around the central London area. To
 get an intuitive understanding of station concentration, locations can be
 aggregated within 500 metre wide hexagons geometries, as in the map below. The
-color and height of the hexagons relate to the number of stations present in
+colour and height of the hexagons relate to the number of stations present in
 each hexagon.
 
 Inspecting this map, you will find that the highest concentration of charging
@@ -53,7 +53,7 @@ Bridge and Stamford Street.
 
 Mouse controls:
 
-* Scroll in our out to control the zoom.
+* Scroll up and down to control the zoom.
 * Shift + click + drag to pitch or yaw the view.
 * Hover for aggregated station counts by 500m width hexagon.
 
@@ -83,9 +83,9 @@ public bike network.
 <iframe src="./outputs/point_layer.html" width=800 height=450></iframe>
 
 Note that the point grid is naive to the locations of places that people may
-wish to cycle to. The current approach could be easily adapted to use locations
-of overnight population, commercial areas or any other geolocatable feature of
-interest.
+wish to start or finish their journeys. The current approach could be easily
+adapted to use locations of overnight population, commercial areas or any other
+geolocatable feature of interest.
 
 Note that some of the locations within the point grid were adjusted by a
 built-in r5py algorithm during the travel time computation. This was also not
@@ -94,7 +94,7 @@ fall in inaccessible parts of the transport network, such as within private
 roads or within the Thames. A more robust method of reporting the travel time
 for these areas would be to snap the location to the nearest public road within
 the transport network and add a travel time penalty to this centroid's travel
-time. For areas in truly inaccessible areas such as waterways, landuse spatial
+time. For areas in truly inaccessible areas such as waterways, land use spatial
 data can be used to determine points falling within water. Points determined
 to meet this condition should be removed from the analysis.
 
@@ -115,5 +115,6 @@ travel time.
 
 The ability to model counterfactuals such as adding new station locations into
 the network and recalculating the effect on travel times would also be of
-interest. Alternative methods of constrained network optimisation can also
-be explored in order to maximise coverage of the cycle network.
+interest. Alternative methods of constrained network optimisation and
+clustering can also be explored in order to maximise coverage of the cycle
+network while minimising cost.

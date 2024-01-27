@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Rich Leyshon">
-<meta name="dcterms.date" content="2024-01-26">
+<meta name="dcterms.date" content="2024-01-27">
 
 <title>Measuring Travel Time to Public Bike Charging Stations in London.</title>
 <style>
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 26, 2024</p>
+      <p class="date">January 27, 2024</p>
     </div>
   </div>
   
@@ -108,11 +108,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="station-locations" class="level2">
 <h2 class="anchored" data-anchor-id="station-locations">Station Locations</h2>
-<p>The station locations are densely located around the central London area. To get an intuitive understanding of station concentration, locations can be aggregated within 500 metre wide hexagons geometries, as in the map below. The color and height of the hexagons relate to the number of stations present in each hexagon.</p>
+<p>The station locations are densely located around the central London area. To get an intuitive understanding of station concentration, locations can be aggregated within 500 metre wide hexagons geometries, as in the map below. The colour and height of the hexagons relate to the number of stations present in each hexagon.</p>
 <p>Inspecting this map, you will find that the highest concentration of charging stations are on the South Bank of the Thames at the intersection of Waterloo Bridge and Stamford Street.</p>
 <p>Mouse controls:</p>
 <ul>
-<li>Scroll in our out to control the zoom.</li>
+<li>Scroll up and down to control the zoom.</li>
 <li>Shift + click + drag to pitch or yaw the view.</li>
 <li>Hover for aggregated station counts by 500m width hexagon.</li>
 </ul>
@@ -126,8 +126,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Zooming into the interactive map, you may notice that some points are larger than others. Larger points are reachable by more stations within a 30 minute ride. This map illustrates the areas in London that are best-served by the public bike network.</p>
 <iframe src="./outputs/point_layer.html" width="800" height="450">
 </iframe>
-<p>Note that the point grid is naive to the locations of places that people may wish to cycle to. The current approach could be easily adapted to use locations of overnight population, commercial areas or any other geolocatable feature of interest.</p>
-<p>Note that some of the locations within the point grid were adjusted by a built-in r5py algorithm during the travel time computation. This was also not successful in some cases. The reason for this is that some points happen to fall in inaccessible parts of the transport network, such as within private roads or within the Thames. A more robust method of reporting the travel time for these areas would be to snap the location to the nearest public road within the transport network and add a travel time penalty to this centroid’s travel time. For areas in truly inaccessible areas such as waterways, landuse spatial data can be used to determine points falling within water. Points determined to meet this condition should be removed from the analysis.</p>
+<p>Note that the point grid is naive to the locations of places that people may wish to start or finish their journeys. The current approach could be easily adapted to use locations of overnight population, commercial areas or any other geolocatable feature of interest.</p>
+<p>Note that some of the locations within the point grid were adjusted by a built-in r5py algorithm during the travel time computation. This was also not successful in some cases. The reason for this is that some points happen to fall in inaccessible parts of the transport network, such as within private roads or within the Thames. A more robust method of reporting the travel time for these areas would be to snap the location to the nearest public road within the transport network and add a travel time penalty to this centroid’s travel time. For areas in truly inaccessible areas such as waterways, land use spatial data can be used to determine points falling within water. Points determined to meet this condition should be removed from the analysis.</p>
 </section>
 <section id="isolated-points-within-commutable-distance-of-network" class="level2">
 <h2 class="anchored" data-anchor-id="isolated-points-within-commutable-distance-of-network">Isolated Points Within Commutable Distance of Network</h2>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 <iframe src="./outputs/isolated_point_layer.html" width="800" height="450">
 </iframe>
 <p>A useful tool for the non-technical user would be perhaps a Shiny or Streamlit application that allowed the user to select n points with the greatest median travel time.</p>
-<p>The ability to model counterfactuals such as adding new station locations into the network and recalculating the effect on travel times would also be of interest. Alternative methods of constrained network optimisation can also be explored in order to maximise coverage of the cycle network.</p>
+<p>The ability to model counterfactuals such as adding new station locations into the network and recalculating the effect on travel times would also be of interest. Alternative methods of constrained network optimisation and clustering can also be explored in order to maximise coverage of the cycle network while minimising cost.</p>
 </section>
 
 </main>
