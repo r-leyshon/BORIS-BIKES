@@ -7,7 +7,8 @@ import pyproj
 import pandas as pd
 import geopandas as gpd
 
-def create_point_grid(bbox_list:list, stepsize:int) -> gpd.GeoDataFrame:
+
+def create_point_grid(bbox_list: list, stepsize: int) -> gpd.GeoDataFrame:
     """Create a metric point plane for a given bounding box.
 
     Return a geodataframe of evenly spaced points for a specified bounding box.
@@ -48,15 +49,19 @@ def create_point_grid(bbox_list:list, stepsize:int) -> gpd.GeoDataFrame:
         raise ValueError(f"bbox_list expects 4 values. Found {len(bbox_list)}")
     for coord in bbox_list:
         if not isinstance(coord, float):
-            raise TypeError(f"Coords must be float. Found {coord}:{type(coord)}")
+            raise TypeError(
+                f"Coords must be float. Found {coord}: {type(coord)}"
+            )
     # check points are ordered correctly
     xmin, ymin, xmax, ymax = bbox_list
     if xmin >= xmax:
         raise ValueError(
-            "bbox_list value at pos 0 should be smaller than value at pos 2.")
+            "bbox_list value at pos 0 should be smaller than value at pos 2."
+        )
     if ymin >= ymax:
         raise ValueError(
-            "bbox_list value at pos 1 should be smaller than value at pos 3.")
+            "bbox_list value at pos 1 should be smaller than value at pos 3."
+        )
     if not isinstance(stepsize, int):
         raise TypeError(f"stepsize expects int. Found {type(stepsize)}")
     if stepsize <= 0:
@@ -66,10 +71,10 @@ def create_point_grid(bbox_list:list, stepsize:int) -> gpd.GeoDataFrame:
     planar_transformer = pyproj.Transformer.from_crs(4326, 27700)
     geodetic_transformer = pyproj.Transformer.from_crs(27700, 4326)
     # bbox corners
-    sw = shapely.geometry.Point((xmin, ymin)) 
+    sw = shapely.geometry.Point((xmin, ymin))
     ne = shapely.geometry.Point((xmax, ymax))
     # Project corners to planar
-    planar_sw = planar_transformer.transform(sw.x, sw.y) 
+    planar_sw = planar_transformer.transform(sw.x, sw.y)
     planar_ne = planar_transformer.transform(ne.x, ne.y)
     # Iterate over metric plane
     points = []
@@ -81,11 +86,6 @@ def create_point_grid(bbox_list:list, stepsize:int) -> gpd.GeoDataFrame:
             points.append(p)
             y += stepsize
         x += stepsize
-    df = pd.DataFrame(
-        {
-            "geometry": points,
-            "id": range(0, len(points))
-            }
-        )
+    df = pd.DataFrame({"geometry": points, "id": range(0, len(points))})
     gdf = gpd.GeoDataFrame(df, crs=4326)
     return gdf

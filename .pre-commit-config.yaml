@@ -43,11 +43,11 @@ repos:
       language_version: python # Should be a command that runs python3.6+
 
 # ----- flake8 - python linting
-- repo: https://github.com/pycqa/flake8
-  rev: 3.9.2
+- repo: https://github.com/PyCQA/flake8
+  rev: 5.0.4
   hooks:
     - id: flake8
-      name: flake8 - Python linting
+      additional_dependencies: [flake8-typing-imports==1.10.0]
 
 # ----- isort - imports sorting
 - repo: https://github.com/pycqa/isort

@@ -1,12 +1,13 @@
+"""Munging data with pandas/geopandas."""
 import pandas as pd
 import geopandas as gpd
 from sklearn import preprocessing
 
 
 def get_median_tts_for_all_stations(
-    stations:gpd.GeoDataFrame, tt_matrix:pd.DataFrame, pp:gpd.GeoDataFrame
-    ) -> gpd.GeoDataFrame:
-    """Joins travel times & medians to point geometries.
+    stations: gpd.GeoDataFrame, tt_matrix: pd.DataFrame, pp: gpd.GeoDataFrame
+) -> gpd.GeoDataFrame:
+    """Join travel times & medians to point geometries.
 
     Station locations are presumed to be origins. Points in the point plane are
     presumed to be destinations. Station geometry is dropped.
@@ -37,7 +38,8 @@ def get_median_tts_for_all_stations(
     n_stations = tt_dropna.groupby("to_id")["from_id"].count()
     df = pp.join(med_tts).join(n_stations)
     df = df.rename(
-        columns={"travel_time": "median_tt", "from_id": "n_stations_serving"})
+        columns={"travel_time": "median_tt", "from_id": "n_stations_serving"}
+    )
     # need integer for n_stations_serving but there are NaNs
     bool_ind = df["n_stations_serving"].isna()
     df.loc[bool_ind, "n_stations_serving"] = 0.0
@@ -51,6 +53,6 @@ def get_median_tts_for_all_stations(
     out_gdf["listed_geom"] = [[c.x, c.y] for c in out_gdf["geometry"]]
     out_gdf["inverted_med_tt"] = (
         max(out_gdf["median_tt"].dropna()) - out_gdf["median_tt"]
-        ) * 0.1
-    
+    ) * 0.1
+
     return out_gdf

@@ -30,7 +30,7 @@ bike stations located outside of that boundary.
 
 In summary, if the point plane were not significantly larger than the extent of
 the station locations, points nearby to the boundary of the commutable area
-would be significantly disadvantaged. 
+would be significantly disadvantaged.
 
 The simple plot of the point plane's extent (in blue) and the station locations
 (in red) confirms that the plane's size is large enough to avoid edge effects
@@ -73,7 +73,7 @@ based on this analysis.
 Points in the grid that were not reachable within 30 minutes appear red. Points
 with a lower median travel time are coloured white. The pink zone within the
 red points represents the effective extent that can be reached by the average
-cyclist within a 30 minute cycle from any of the station locations. 
+cyclist within a 30 minute cycle from any of the station locations.
 
 Zooming into the interactive map, you may notice that some points are larger
 than others. Larger points are reachable by more stations within a 30 minute
@@ -105,13 +105,13 @@ reachable area by 30 minute bike ride. Considering adding stations to these
 locations would increase the coverage of the public bike network. However, once
 more note that due to the naive locations of the point grid, these locations
 are not optimised for utility. Adjusting the station location to the nearest
-point of interest adjacent to the remote points would be recommended. 
+point of interest adjacent to the remote points would be recommended.
 
 <iframe src="./outputs/isolated_point_layer.html" width=800 height=450></iframe>
 
 A useful tool for the non-technical user would be perhaps a Shiny or Streamlit
 application that allowed the user to select n points with the greatest median
-travel time. 
+travel time.
 
 The ability to model counterfactuals such as adding new station locations into
 the network and recalculating the effect on travel times would also be of
