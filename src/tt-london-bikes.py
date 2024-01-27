@@ -1,4 +1,7 @@
-"""Carry out routing with r5py and save outputs to data/interim."""
+"""Carry out routing with r5py and save outputs to data/interim.
+
+JDK dependency to run the routing.
+"""
 import datetime
 
 import geopandas as gpd
