@@ -107,6 +107,10 @@ more note that due to the naive locations of the point plane, these locations
 are not optimised for utility. Adjusting the station location to the nearest
 point of interest adjacent to the remote points would be recommended.
 
+Below are the 20 most isolated points within the 30 minute cyclable area.
+Isolated here is defined as the greatest median travel time from any bike
+station.
+
 <iframe src="./outputs/isolated_point_layer.html" width=800 height=450></iframe>
 
 A useful tool for the non-technical user would be perhaps a Shiny or Streamlit

@@ -132,6 +132,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="isolated-points-within-commutable-distance-of-network" class="level2">
 <h2 class="anchored" data-anchor-id="isolated-points-within-commutable-distance-of-network">Isolated Points Within Commutable Distance of Network</h2>
 <p>The above map can be simplified to provide the most remote locations within the reachable area by 30 minute bike ride. Considering adding stations to these locations would increase the coverage of the public bike network. However, once more note that due to the naive locations of the point plane, these locations are not optimised for utility. Adjusting the station location to the nearest point of interest adjacent to the remote points would be recommended.</p>
+<p>Below are the 20 most isolated points within the 30 minute cyclable area. Isolated here is defined as the greatest median travel time from any bike station.</p>
 <iframe src="./outputs/isolated_point_layer.html" width="800" height="450">
 </iframe>
 <p>A useful tool for the non-technical user would be perhaps a Shiny or Streamlit application that allowed the user to select n points with the greatest median travel time. If recalculation of the transport network was implemented, the Java dependencies would mean serving the dashboard from a Docker container.</p>
