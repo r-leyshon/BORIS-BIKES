@@ -5,7 +5,7 @@ from sklearn import preprocessing
 
 
 def get_median_tts_for_all_stations(
-    stations: gpd.GeoDataFrame, tt_matrix: pd.DataFrame, pp: gpd.GeoDataFrame
+    tt_matrix: pd.DataFrame, pp: gpd.GeoDataFrame
 ) -> gpd.GeoDataFrame:
     """Join travel times & medians to point geometries.
 
@@ -14,8 +14,6 @@ def get_median_tts_for_all_stations(
 
     Parameters
     ----------
-    stations : gpd.GeoDataFrame
-        Locations of stations.
     tt_matrix : pd.DataFrame
         Matrix of travel times where `from_id` are stations and `to_id` are
         points in the point plane.
